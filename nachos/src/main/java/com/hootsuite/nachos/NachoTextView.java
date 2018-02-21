@@ -817,7 +817,7 @@ public class NachoTextView extends MultiAutoCompleteTextView implements TextWatc
 
     @Override
     public void afterTextChanged(Editable message) {
-        if (mIgnoreTextChangedEvents) {
+        if (mIgnoreTextChangedEvents || message.length() == 0 || message.length() >= mTextChangedEnd) {
             return;
         }
 
